@@ -46,6 +46,10 @@ class _CategoryViewState extends State<CategoryView> {
                     title: 'Link',
                   ),
                   CategoryButton(
+                    icon: Icons.wifi,
+                    title: 'Wifi',
+                  ),
+                  CategoryButton(
                     icon: Icons.text_format,
                     title: 'Text',
                   ),

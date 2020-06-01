@@ -79,7 +79,7 @@ class _ReateAppScreenState extends State<ReateAppScreen> {
                           color: Colors.transparent,
                           child: InkWell(
                             onTap: () {
-                              _launchURL("https://play.google.com/store/apps/details?id=com.rabsdeveloper.barqr");
+                              _launchURL("https://play.google.com/store/apps/details?id=com.aliyura.barqr");
                             },
                             child: Center(
                               child: Padding(

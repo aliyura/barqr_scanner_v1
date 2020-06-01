@@ -79,7 +79,7 @@ class _InviteFriendState extends State<InviteFriend> {
                           child: InkWell(
                             onTap: () {
                               Share.share(
-                                  "Hi There!\n\nDownload Barqr Scanner app  v1.0\n\nA barcode is a machine-readable optical label that contains information about the item to which it is attached. Barqr Scanner is an application that provides simple and easy way to generate QR or Bar codes as well as scanning.  The application  optically read QR or Bar code and return the human readable form of what is atatched to it.\n\nhttps://play.google.com/store/apps/details?id=com.rabsdeveloper.barqr");
+                                  "Hi There!\n\nDownload Barqr Scanner app  v1.0\n\nA barcode is a machine-readable optical label that contains information about the item to which it is attached. Barqr Scanner is an application that provides simple and easy way to generate QR or Bar codes as well as scanning.  The application  optically read QR or Bar code and return the human readable form of what is atatched to it.\n\nhttps://play.google.com/store/apps/details?id=com.aliyura.barqr");
                             },
                             child: Center(
                               child: Row(
