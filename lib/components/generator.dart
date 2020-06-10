@@ -53,7 +53,7 @@ class Generator {
                     child: Column(
                       children: <Widget>[
                         Text(
-                          'Create ' + type + ' QR',
+                          'Create QR for ' + type,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
                         ),

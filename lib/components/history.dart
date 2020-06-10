@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:barqr_scanner/init.dart';
 import 'package:barqr_scanner/components/themes.dart';
-import 'dart:convert';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HistoryView extends StatefulWidget {
   @override
@@ -15,8 +15,21 @@ class _HistoryViewState extends State<HistoryView> {
   @override
   void initState() {
     manager = AppManager(context: context);
-    historyBase = manager.getHistory();
+    getHistory();
     super.initState();
+  }
+
+  getHistory() async {
+    SharedPreferences storage = await SharedPreferences.getInstance();
+    String history = storage.getString("history");
+
+    setState(() {
+      if (history != null) {
+        historyBase = history.split(",");
+      } else {
+        historyBase = [];
+      }
+    });
   }
 
   @override
@@ -42,7 +55,7 @@ class _HistoryViewState extends State<HistoryView> {
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height - 190,
-              child: historyBase.length > 0
+              child: historyBase!=null && historyBase.length>0
                   ? ListView.builder(
                       itemCount: historyBase.length,
                       itemBuilder: (context, idx) {

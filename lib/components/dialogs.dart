@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:barqr_scanner/components/themes.dart';
-//import 'package:clipboard_manager/clipboard_manager.dart';
+import 'package:barqr_scanner/init.dart';
 
 class Consts {
   Consts._();
@@ -30,13 +30,11 @@ class AppDialog {
 
   void show(String title, String message, dynamic type) {
     Alert(
-      context: appContext,
-      type: type,
-      title: title,
-      desc: message,
-        buttons: [
-        ]
-    ).show();
+        context: appContext,
+        type: type,
+        title: title,
+        desc: message,
+        buttons: []).show();
   }
 
   void notify(String title, String message, dynamic type) {
@@ -52,17 +50,7 @@ class AppDialog {
             style: TextStyle(color: AppTheme.nearlyBlue, fontSize: 20),
           ),
           onPressed: () {
-            // ClipboardManager.copyToClipBoard(message).then((result) {
-            //   final snackBar = SnackBar(
-            //     content: Text('Copied to Clipboard'),
-            //     action: SnackBarAction(
-            //       label: 'Undo',
-            //       onPressed: () {},
-            //     ),
-            //   );
-            //   Scaffold.of(appContext).showSnackBar(snackBar);
-            // });
-
+            AppManager(context: appContext).copy(message);
             this.closeDialog();
           },
           color: AppTheme.white,
@@ -70,7 +58,7 @@ class AppDialog {
         ),
         DialogButton(
           child: Text(
-            "Okay",
+            "Thanks",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           onPressed: () => this.closeDialog(),
